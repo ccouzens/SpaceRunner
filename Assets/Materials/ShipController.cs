@@ -18,4 +18,9 @@ public class ShipController : MonoBehaviour {
 		transform.Translate(-horizontalSpeed * Time.deltaTime * Input.GetAxis("Horizontal"), 0, 0);
 
 	}
+	
+	void OnTriggerEnter(Collider other) {
+		verticalSpeed = 0;
+		horizontalSpeed = 0;
+	}
 }

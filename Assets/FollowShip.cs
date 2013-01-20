@@ -3,15 +3,15 @@ using System.Collections;
 
 public class FollowShip : MonoBehaviour {
 	public Transform ship;
-	private float height;
+	private Vector3 offset;
 
 	// Use this for initialization
 	void Start () {
-		height = (transform.position - ship.position).z;
+		offset = transform.position - ship.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		transform.position = ship.position + Vector3.forward * height;
+		transform.position = ship.position + offset;
 	}
 }
