@@ -4,6 +4,8 @@ using System.Collections;
 public class ShipController : MonoBehaviour {
 	public float verticalSpeed;
 	public float horizontalSpeed;
+	
+	public Texture2D explosionTexture;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +23,6 @@ public class ShipController : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		verticalSpeed = 0;
 		horizontalSpeed = 0;
-		Debug.Log("Hit something");
+		renderer.material.mainTexture = explosionTexture;
 	}
 }
